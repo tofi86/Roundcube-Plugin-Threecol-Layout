@@ -15,7 +15,7 @@ class threecol extends rcube_plugin
 
 	function init()
 	{
-		$rcmail = rcube::get_instance();
+		$rcmail = rcmail::get_instance();
 		$no_override = array_flip($rcmail->config->get('dont_override', array()));
 		$this->driver = $this->home .'/skins/'. $rcmail->config->get('skin') .'/func.php';
 
@@ -74,7 +74,7 @@ class threecol extends rcube_plugin
 			$orig = $args['blocks']['main']['options'];
 			$tmp['previewpane_layou'] = array(
 				'title' => Q($this->gettext('threecol.title')),
-				'content' => $select->show(rcube::get_instance()->config->get('previewpane_layout')),
+				'content' => $select->show(rcmail::get_instance()->config->get('previewpane_layout')),
 			);
 
 			$args['blocks']['main']['options'] = array_merge($tmp, $orig);
@@ -86,7 +86,7 @@ class threecol extends rcube_plugin
 	function save_settings($args)
 	{
 		if ($args['section'] == 'mailbox')
-			$args['prefs']['previewpane_layout'] = isset($_POST['_previewpane_layout']) ? get_input_value('_previewpane_layout', RCUBE_INPUT_POST) : rcube::get_instance()->config->get('previewpane_layout', 'below');
+			$args['prefs']['previewpane_layout'] = isset($_POST['_previewpane_layout']) ? get_input_value('_previewpane_layout', RCUBE_INPUT_POST) : rcmail::get_instance()->config->get('previewpane_layout', 'below');
 
 		return $args;
 	}
