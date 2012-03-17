@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.9.0" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+	http://pear.php.net/dtd/tasks-1.0.xsd
+	http://pear.php.net/dtd/package-2.0
+	http://pear.php.net/dtd/package-2.0.xsd">
+	<name>threecol</name>
+	<uri>http://www.tehinterweb.co.uk/roundcube/plugins/exp/threecol.zip</uri>
+	<summary>Adds a user configurable option to place the preview pane below or on the right of the message list</summary>
+	<description>Allows users to choose if they would like the preview pane to be placed below the message list or to the right of it.</description>
+	<lead>
+		<name>Philip Weir</name>
+		<user>JohnDoh</user>
+		<email>roundcube@tehinterweb.co.uk</email>
+		<active>yes</active>
+	</lead>
+	<date>2012-03-17</date>
+	<time>11:00:18</time>
+	<version>
+		<release>0.2</release>
+		<api>0.2</api>
+	</version>
+	<stability>
+		<release>experimental</release>
+		<api>experimental</api>
+	</stability>
+	<license uri="http://www.gnu.org/licenses/gpl.html">GNU GPLv3+</license>
+	<notes>-</notes>
+	<contents>
+		<dir baseinstalldir="/" name="/">
+			<file name="threecol.php" role="php">
+				<tasks:replace from="@name@" to="name" type="package-info"/>
+				<tasks:replace from="@package_version@" to="version" type="package-info"/>
+			</file>
+			<file name="CHANGELOG" role="data"/>
+			<file name="README" role="data"/>
+			<file name="localization/en_GB.inc" role="data"/>
+			<file name="localization/en_US.inc" role="data"/>
+			<file name="skins/default/func.php" role="php"/>
+			<file name="skins/default/threecol.css" role="data"/>
+			<file name="skins/default/threecol.js" role="data"/>
+			<file name="skins/larry/buttons.png" role="data"/>
+			<file name="skins/larry/func.php" role="php"/>
+			<file name="skins/larry/threecol.css" role="data"/>
+			<file name="skins/larry/threecol.js" role="data"/>
+		</dir>
+		<!-- / -->
+	</contents>
+	<dependencies>
+		<required>
+			<php>
+				<min>5.2.1</min>
+			</php>
+			<pearinstaller>
+				<min>1.7.0</min>
+			</pearinstaller>
+		</required>
+	</dependencies>
+	<phprelease/>
+</package>
