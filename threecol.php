@@ -5,7 +5,7 @@
  *
  * Plugin to switch Roundcube to a three column layout
  *
- * @version 0.1
+ * @version 0.2
  * @author Philip Weir
  */
 class threecol extends rcube_plugin
@@ -65,19 +65,15 @@ class threecol extends rcube_plugin
 		if ($args['section'] == 'mailbox') {
 			$this->add_texts('localization/');
 
-			$field_id = 'rcmfd_previewpane_layou';
+			$field_id = 'rcmfd_previewpane_layout';
 			$select = new html_select(array('name' => '_previewpane_layout', 'id' => $field_id));
+			$select->add(Q($this->gettext('threecol.none')), 'none');
 			$select->add(Q($this->gettext('threecol.below')), 'below');
 			$select->add(Q($this->gettext('threecol.right')), 'right');
 
 			// add new option at the top of the list
-			$orig = $args['blocks']['main']['options'];
-			$tmp['previewpane_layou'] = array(
-				'title' => Q($this->gettext('threecol.title')),
-				'content' => $select->show(rcmail::get_instance()->config->get('previewpane_layout')),
-			);
-
-			$args['blocks']['main']['options'] = array_merge($tmp, $orig);
+			$val = rcmail::get_instance()->config->get('preview_pane') ? rcmail::get_instance()->config->get('previewpane_layout', 'below') : 'none';
+			$args['blocks']['main']['options']['preview_pane']['content'] = $select->show($val);
 		}
 
 		return $args;
@@ -85,8 +81,10 @@ class threecol extends rcube_plugin
 
 	function save_settings($args)
 	{
-		if ($args['section'] == 'mailbox')
-			$args['prefs']['previewpane_layout'] = isset($_POST['_previewpane_layout']) ? get_input_value('_previewpane_layout', RCUBE_INPUT_POST) : rcmail::get_instance()->config->get('previewpane_layout', 'below');
+		if ($args['section'] == 'mailbox') {
+			$args['prefs']['preview_pane'] = get_input_value('_previewpane_layout', RCUBE_INPUT_POST) == 'none' ? false : true;
+			$args['prefs']['previewpane_layout'] = get_input_value('_previewpane_layout', RCUBE_INPUT_POST) != 'none' ? get_input_value('_previewpane_layout', RCUBE_INPUT_POST) : rcmail::get_instance()->config->get('previewpane_layout', 'below');
+		}
 
 		return $args;
 	}
