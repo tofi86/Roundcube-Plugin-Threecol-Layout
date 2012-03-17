@@ -1,0 +1,22 @@
+/**
+ * ThreeCol plugin styles
+ */
+
+#mailcontframe
+{
+  height: 100%;
+}
+
+#mailpreviewframe
+{
+  width: auto;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: auto;
+}
+
+#mailboxlist-container
+{
+  height: 100%;
+}
