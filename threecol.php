@@ -5,7 +5,7 @@
  *
  * Plugin to switch Roundcube to a three column layout
  *
- * @version 0.1
+ * @version 0.2
  * @author Philip Weir
  */
 class threecol extends rcube_plugin
@@ -31,7 +31,7 @@ class threecol extends rcube_plugin
 			}
 		}
 		else {
-			raise_error(array(
+			rcube::raise_error(array(
 				'code' => 600,
 				'type' => 'php',
 				'file' => __FILE__,
@@ -46,7 +46,7 @@ class threecol extends rcube_plugin
 		include_once($this->driver);
 
 		if (!function_exists('render_page')) {
-			raise_error(array(
+			rcube::raise_error(array(
 				'code' => 600,
 				'type' => 'php',
 				'file' => __FILE__,
@@ -67,13 +67,13 @@ class threecol extends rcube_plugin
 
 			$field_id = 'rcmfd_previewpane_layou';
 			$select = new html_select(array('name' => '_previewpane_layout', 'id' => $field_id));
-			$select->add(Q($this->gettext('threecol.below')), 'below');
-			$select->add(Q($this->gettext('threecol.right')), 'right');
+			$select->add(rcube_ui::Q($this->gettext('threecol.below')), 'below');
+			$select->add(rcube_ui::Q($this->gettext('threecol.right')), 'right');
 
 			// add new option at the top of the list
 			$orig = $args['blocks']['main']['options'];
 			$tmp['previewpane_layou'] = array(
-				'title' => Q($this->gettext('threecol.title')),
+				'title' => rcube_ui::Q($this->gettext('threecol.title')),
 				'content' => $select->show(rcube::get_instance()->config->get('previewpane_layout')),
 			);
 
@@ -86,7 +86,7 @@ class threecol extends rcube_plugin
 	function save_settings($args)
 	{
 		if ($args['section'] == 'mailbox')
-			$args['prefs']['previewpane_layout'] = isset($_POST['_previewpane_layout']) ? get_input_value('_previewpane_layout', RCUBE_INPUT_POST) : rcube::get_instance()->config->get('previewpane_layout', 'below');
+			$args['prefs']['previewpane_layout'] = isset($_POST['_previewpane_layout']) ? rcube_ui::get_input_value('_previewpane_layout', rcube_ui::INPUT_POST) : rcube::get_instance()->config->get('previewpane_layout', 'below');
 
 		return $args;
 	}
