@@ -67,9 +67,9 @@ class threecol extends rcube_plugin
 
 			$field_id = 'rcmfd_previewpane_layout';
 			$select = new html_select(array('name' => '_previewpane_layout', 'id' => $field_id));
-			$select->add(rcube_ui::Q($this->gettext('threecol.none')), 'none');
-			$select->add(rcube_ui::Q($this->gettext('threecol.below')), 'below');
-			$select->add(rcube_ui::Q($this->gettext('threecol.right')), 'right');
+			$select->add(rcmail::Q($this->gettext('threecol.none')), 'none');
+			$select->add(rcmail::Q($this->gettext('threecol.below')), 'below');
+			$select->add(rcmail::Q($this->gettext('threecol.right')), 'right');
 
 			// add new option at the top of the list
 			$val = rcube::get_instance()->config->get('preview_pane') ? rcube::get_instance()->config->get('previewpane_layout', 'below') : 'none';
@@ -82,8 +82,8 @@ class threecol extends rcube_plugin
 	function save_settings($args)
 	{
 		if ($args['section'] == 'mailbox') {
-			$args['prefs']['preview_pane'] = rcube_ui::get_input_value('_previewpane_layout', rcube_ui::INPUT_POST) == 'none' ? false : true;
-			$args['prefs']['previewpane_layout'] = rcube_ui::get_input_value('_previewpane_layout', rcube_ui::INPUT_POST) != 'none' ? rcube_ui::get_input_value('_previewpane_layout', rcube_ui::INPUT_POST) : rcube::get_instance()->config->get('previewpane_layout', 'below');
+			$args['prefs']['preview_pane'] = rcube_utils::get_input_value('_previewpane_layout', rcube_utils::INPUT_POST) == 'none' ? false : true;
+			$args['prefs']['previewpane_layout'] = rcube_utils::get_input_value('_previewpane_layout', rcube_utils::INPUT_POST) != 'none' ? rcube_utils::get_input_value('_previewpane_layout', rcube_utils::INPUT_POST) : rcube::get_instance()->config->get('previewpane_layout', 'below');
 		}
 
 		return $args;
