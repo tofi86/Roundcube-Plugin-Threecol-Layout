@@ -15,7 +15,7 @@ class threecol extends rcube_plugin
 
 	function init()
 	{
-		$rcmail = rcmail::get_instance();
+		$rcmail = rcube::get_instance();
 		$no_override = array_flip($rcmail->config->get('dont_override', array()));
 		$this->driver = $this->home .'/skins/'. $rcmail->config->get('skin') .'/func.php';
 
