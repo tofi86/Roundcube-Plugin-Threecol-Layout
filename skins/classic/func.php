@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ThreeCol Default driver
+ * ThreeCol Classic driver
  * @version 1.0
  * @author Philip Weir
  */

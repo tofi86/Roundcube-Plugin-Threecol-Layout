@@ -13,8 +13,8 @@
 		<email>roundcube@tehinterweb.co.uk</email>
 		<active>yes</active>
 	</lead>
-	<date>2012-05-06</date>
-	<time>10:26:19</time>
+	<date>2012-07-30</date>
+	<time>11:41:13</time>
 	<version>
 		<release>0.3</release>
 		<api>0.3</api>
@@ -35,9 +35,9 @@
 			<file name="README" role="data"/>
 			<file name="localization/en_GB.inc" role="data"/>
 			<file name="localization/en_US.inc" role="data"/>
-			<file name="skins/default/func.php" role="php"/>
-			<file name="skins/default/threecol.css" role="data"/>
-			<file name="skins/default/threecol.js" role="data"/>
+			<file name="skins/classic/func.php" role="php"/>
+			<file name="skins/classic/threecol.css" role="data"/>
+			<file name="skins/classic/threecol.js" role="data"/>
 			<file name="skins/larry/buttons.png" role="data"/>
 			<file name="skins/larry/func.php" role="php"/>
 			<file name="skins/larry/threecol.css" role="data"/>
