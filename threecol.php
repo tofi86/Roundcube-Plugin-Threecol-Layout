@@ -5,7 +5,7 @@
  *
  * Plugin to switch Roundcube to a three column layout
  *
- * @version 0.2
+ * @version @package_version@
  * @author Philip Weir
  */
 class threecol extends rcube_plugin
