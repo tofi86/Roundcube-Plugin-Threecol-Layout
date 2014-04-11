@@ -1,5 +1,7 @@
 *Plugin originally created by @JohnDoh. This is a fork.* **I don't maintain this repo!**
 
+**Current version doesn't work with RoundCube 1.0!**
+
 
 Roundcube Webmail ThreeCol
 ==========================
