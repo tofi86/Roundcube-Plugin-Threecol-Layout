@@ -1,6 +1,6 @@
 *Plugin originally created by @JohnDoh. This is a fork.* **I don't maintain this repo!**
 
-**This branch doesn't work with RoundCube 1.x! Check out `master` branch for 1.x support!**
+**This branch doesn't work with RoundCube 0.9! Check out `rc-0.9` branch for v0.9 support!**
 
 ---
 
