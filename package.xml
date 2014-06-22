@@ -33,8 +33,12 @@
 			</file>
 			<file name="CHANGELOG" role="data"/>
 			<file name="README" role="data"/>
+			<file name="localization/de_CH.inc" role="data"/>
+			<file name="localization/de_DE.inc" role="data"/>
 			<file name="localization/en_GB.inc" role="data"/>
 			<file name="localization/en_US.inc" role="data"/>
+			<file name="localization/fr_FR.inc" role="data"/>
+			<file name="localization/hu_HU.inc" role="data"/>
 			<file name="skins/classic/func.php" role="php"/>
 			<file name="skins/classic/threecol.css" role="data"/>
 			<file name="skins/classic/threecol.js" role="data"/>
