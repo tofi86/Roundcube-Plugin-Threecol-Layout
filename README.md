@@ -1,7 +1,8 @@
 *Plugin originally created by @JohnDoh. This is a fork.* **I don't maintain this repo!**
 
-**Current version doesn't work with RoundCube 1.0!**
+**This branch doesn't work with RoundCube 1.x! Check out `master` branch for 1.x support!**
 
+---
 
 Roundcube Webmail ThreeCol
 ==========================
@@ -38,6 +39,6 @@ Config
 ======
 
 To make enable the three column layout as default for all users set
-$rcmail_config['previewpane_layout'] = 'right';
-in the main config file. To prevent users form changing this setting add
+`$rcmail_config['previewpane_layout'] = 'right';`
+in the main config file. To prevent users from changing this setting add
 `previewpane_layout` to the `dont_override` config option
