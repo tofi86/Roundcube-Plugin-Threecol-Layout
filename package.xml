@@ -4,7 +4,7 @@
 	http://pear.php.net/dtd/package-2.0
 	http://pear.php.net/dtd/package-2.0.xsd">
 	<name>threecol</name>
-	<uri>http://github.com/JohnDoh/Roundcube-Plugin-Threecol-Layout/</uri>
+	<uri>https://github.com/tofi86/Roundcube-Plugin-Threecol-Layout</uri>
 	<summary>Adds a user configurable option to place the preview pane below or on the right of the message list</summary>
 	<description>Allows users to choose if they would like the preview pane to be placed below the message list or to the right of it.</description>
 	<lead>
@@ -13,11 +13,11 @@
 		<email>roundcube@tehinterweb.co.uk</email>
 		<active>yes</active>
 	</lead>
-	<date>2012-07-30</date>
-	<time>11:41:13</time>
+	<date>2014-06-22</date>
+	<time>19:35:00</time>
 	<version>
-		<release>0.3</release>
-		<api>0.3</api>
+		<release>0.4</release>
+		<api>0.4</api>
 	</version>
 	<stability>
 		<release>experimental</release>
